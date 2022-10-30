@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+<head>
+    <title>jQuery Calculator</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <style type="text/css">
+		
+		#display {
+		height: 30px;
+		width: 240px;
+		background-color:#E3EDFA;
+		margin-left:5px;
+		}
+		button {
+		padding:10px;
+		margin:5px;
+		width: 50px;
+		}
+		#clear {
+		width: 80px;
+		padding:5px;
+		}
+		#calculator {
+		background-color:#048CC5;
+		border-radius:25px;
+		height: 300px;
+		width: 260px;
+		margin-left:5px;
+		margin:5px;
+		padding:10px;
+		position: absolute;
+		right: 40%;
+		top: 20%;
+		}
+		#title {
+		height: 80px;
+		width:100%;
+		background-color:#BBD6E5;
+		font-size: 30px;
+		color: #333333;
+		font-family: ‘Courier New’, Comic Sans, Comic Sans MS, cursive;
+		padding: 0px;
+		}
+		p {
+		margin:0px;
+		padding-top:15px;
+		text-align: center;
+		}
+		#title:hover
+		{
+		background-color:#048CC5;
+		}
+	   </style>
+	   
+	<script type="text/javascript" src="jquery.min.js"></script>
+	   
+	   
+</head>
+
+<body>
+
+<div id="title">
+<p>A calculator using HTML, CSS & jQuery</p>
+</div>
+
+<div id="calculator">
+
+<div id="display"></div>
+
+<div id="buttons">
+ <button id="1"> 1 </button>
+ <button id="2"> 2 </button>
+ <button id="3"> 3 </button> 
+ <button id="add"> + </button> </br>
+ <button id="4"> 4 </button>
+ <button id="5"> 5 </button>
+ <button id="6"> 6 </button> 
+ <button id="sub"> - </button> </br>
+ <button id="7"> 7 </button>
+ <button id="8"> 8 </button>
+ <button id="9"> 9 </button>
+ <button id="multi"> * </button> </br>
+ <button id="c"> <- </button>
+ <button id="0"> 0 </button>
+ <button id="equal"> = </button>
+ <button id="divide"> / </button> </br>
+ <button id="clear" onclick="refresh()">Clear All</button>
+ </div>
+ 
+ </div>
+ 
+ <script>
+$( "#display" ).on( "mouseenter", function() {
+    $( this ).css({
+      "background-color": "rgb(117,117,117)",
+      "font-weight": "bolder"
+    });
+  })
+$( "#display" ).on( "mouseleave", function() {
+    var styles = {
+      backgroundColor : "#ddd",
+      fontWeight: ""
+    };
+    $( this ).css( styles );
+  });
+  
+var a="";
+var b="";
+var count=0;
+
+$("#1").click(function() {
+if (count==0) {
+a=a+1;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#2").click(function() {
+if (count==0) {
+a=a+2;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#3").click(function() {
+if (count==0) {
+a=a+3;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#4").click(function() {
+if (count==0) {
+a=a+4;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#5").click(function() {
+if (count==0) {
+a=a+5;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#6").click(function() {
+if (count==0) {
+a=a+6;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#7").click(function() {
+if (count==0) {
+a=a+7;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#8").click(function() {
+if (count==0) {
+a=a+8;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#9").click(function() {
+if (count==0) {
+a=a+9;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+$("#0").click(function() {
+if (count==0) {
+a=a+0;
+document.getElementById("display").innerHTML = a;
+}
+})
+
+// Function to multiply numbers
+
+$("#multi").click(function() {
+document.getElementById("display").innerHTML = a+"*";
+count=1;
+
+if (count==1) {
+
+$("#0").click(function() {
+b=b+0;
+document.getElementById("display").innerHTML = a+"*"+"0";
+})
+$("#1").click(function() {
+b=b+1;
+var text = $("#display").text();
+document.getElementById("display").innerHTML = a+"*"+"1";
+})
+$("#2").click(function() {
+b=b+2;
+document.getElementById("display").innerHTML = a+"*"+"2";
+})
+$("#3").click(function() {
+b=b+3;
+document.getElementById("display").innerHTML = a+"*"+"3";
+})
+$("#4").click(function() {
+b=b+4;
+document.getElementById("display").innerHTML = a+"*"+"4";
+})
+$("#5").click(function() {
+b=b+5;
+document.getElementById("display").innerHTML = a+"*"+"5";
+})
+$("#6").click(function() {
+b=b+6;
+document.getElementById("display").innerHTML = a+"*"+"6";
+})
+$("#7").click(function() {
+b=b+7;
+document.getElementById("display").innerHTML = a+"*"+"7";
+})
+$("#8").click(function() {
+b=b+8;
+document.getElementById("display").innerHTML = a+"*"+"8";
+})
+$("#9").click(function() {
+b=b+9;
+document.getElementById("display").innerHTML = a+"*"+"9";
+})
+}
+})
+// Multiplication function ends
+
+
+// Function to divide numbers
+
+$("#divide").click(function() {
+document.getElementById("display").innerHTML = a+"/";
+count=2;
+
+if (count==2) {
+
+$("#0").click(function() {
+b=b+0;
+document.getElementById("display").innerHTML = a+"/"+"0";
+})
+$("#1").click(function() {
+b=b+1;
+var text = $("#display").text();
+document.getElementById("display").innerHTML = a+"/"+"1";
+})
+$("#2").click(function() {
+b=b+2;
+document.getElementById("display").innerHTML = a+"/"+"2";
+})
+$("#3").click(function() {
+b=b+3;
+document.getElementById("display").innerHTML = a+"/"+"3";
+})
+$("#4").click(function() {
+b=b+4;
+document.getElementById("display").innerHTML = a+"/"+"4";
+})
+$("#5").click(function() {
+b=b+5;
+document.getElementById("display").innerHTML = a+"/"+"5";
+})
+$("#6").click(function() {
+b=b+6;
+document.getElementById("display").innerHTML = a+"/"+"6";
+})
+$("#7").click(function() {
+b=b+7;
+document.getElementById("display").innerHTML = a+"/"+"7";
+})
+$("#8").click(function() {
+b=b+8;
+document.getElementById("display").innerHTML = a+"/"+"8";
+})
+$("#9").click(function() {
+b=b+9;
+document.getElementById("display").innerHTML = a+"/"+"9";
+})
+}
+})
+// Division ends
+
+// Function to add numbers
+
+$("#add").click(function() {
+document.getElementById("display").innerHTML = a+"+";
+count=3;
+
+if (count==3) {
+
+$("#0").click(function() {
+b=b+0;
+document.getElementById("display").innerHTML = a+"+"+"0";
+})
+$("#1").click(function() {
+b=b+1;
+var text = $("#display").text();
+document.getElementById("display").innerHTML = a+"+"+"1";
+})
+$("#2").click(function() {
+b=b+2;
+document.getElementById("display").innerHTML = a+"+"+"2";
+})
+$("#3").click(function() {
+b=b+3;
+document.getElementById("display").innerHTML = a+"+"+"3";
+})
+$("#4").click(function() {
+b=b+4;
+document.getElementById("display").innerHTML = a+"+"+"4";
+})
+$("#5").click(function() {
+b=b+5;
+document.getElementById("display").innerHTML = a+"+"+"5";
+})
+$("#6").click(function() {
+b=b+6;
+document.getElementById("display").innerHTML = a+"+"+"6";
+})
+$("#7").click(function() {
+b=b+7;
+document.getElementById("display").innerHTML = a+"+"+"7";
+})
+$("#8").click(function() {
+b=b+8;
+document.getElementById("display").innerHTML = a+"+"+"8";
+})
+$("#9").click(function() {
+b=b+9;
+document.getElementById("display").innerHTML = a+"+"+"9";
+})
+}
+})
+// Addition ends
+
+// Function to subract numbers
+
+$("#sub").click(function() {
+document.getElementById("display").innerHTML = a+"-";
+count=4;
+
+if (count==4) {
+
+$("#0").click(function() {
+b=b+0;
+document.getElementById("display").innerHTML = a+"-"+"0";
+})
+$("#1").click(function() {
+b=b+1;
+var text = $("#display").text();
+document.getElementById("display").innerHTML = a+"-"+"1";
+})
+$("#2").click(function() {
+b=b+2;
+document.getElementById("display").innerHTML = a+"-"+"2";
+})
+$("#3").click(function() {
+b=b+3;
+document.getElementById("display").innerHTML = a+"-"+"3";
+})
+$("#4").click(function() {
+b=b+4;
+document.getElementById("display").innerHTML = a+"-"+"4";
+})
+$("#5").click(function() {
+b=b+5;
+document.getElementById("display").innerHTML = a+"-"+"5";
+})
+$("#6").click(function() {
+b=b+6;
+document.getElementById("display").innerHTML = a+"-"+"6";
+})
+$("#7").click(function() {
+b=b+7;
+document.getElementById("display").innerHTML = a+"-"+"7";
+})
+$("#8").click(function() {
+b=b+8;
+document.getElementById("display").innerHTML = a+"-"+"8";
+})
+$("#9").click(function() {
+b=b+9;
+document.getElementById("display").innerHTML = a+"-"+"9";
+})
+}
+})
+// Subraction ends
+
+$("#c").click(function() {
+// var text = $("#display").text();
+// var txt = text.slice(0, -1);
+// document.getElementById("display").innerHTML=txt;
+if (count==0) {
+var text = $("#display").text();
+a=text.slice(0, -1);
+document.getElementById("display").innerHTML=a;
+} else {
+var text = $("#display").text();
+b=text.slice(0, -1);
+document.getElementById("display").innerHTML=text.slice(0, -1);
+}
+})
+
+$("#equal").click(function() {
+  if (count==1) {
+  document.getElementById("display").innerHTML=a*b;
+  }
+  if (count==2) {
+  document.getElementById("display").innerHTML=a/b;
+  }
+  if (count==3) {
+  document.getElementById("display").innerHTML=Number(a)+Number(b);
+  }
+  if (count==4) {
+  document.getElementById("display").innerHTML=a-b;
+  }
+})
+
+function refresh() {
+    location.reload();
+}
+  
+ </script>
+ 
+	
+</body>
+</html>
